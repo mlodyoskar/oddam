@@ -1,1 +1,6 @@
 @import './settings/fonts';
+@import 'reset.css';
+
+body{
+  font-family: $font-base;
+}
