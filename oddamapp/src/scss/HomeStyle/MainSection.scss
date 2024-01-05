@@ -1,0 +1,14 @@
+.homeSectionContainer {
+    display: flex;
+  &_image {
+
+    width: 700px;
+    height: 100vh;
+    img {
+        position: relative;
+        left: -280px;
+      width: 885px;
+      height: 100vh;
+    }
+  }
+}

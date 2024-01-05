@@ -5,32 +5,32 @@ import Decoration from "../../assets/Decoration.svg";
 const MainSection = () => {
   return (
     <>
-      <section>
-        <div>
+      <section className="homeSectionContainer">
+        <div className="homeSectionContainer_image">
           <img src={HeroImage} alt="losowe rzeczy" />
         </div>
         <div>
-            <div>
-                <button>
+            <div className="login-container">
+                <button className="login-button">
                     Zaloguj
                 </button>
-                <button>Załóż konto</button>
+                <button className="register-button">Załóż konto</button>
             </div>
-            <nav>
-                <ul>
-                    <li>Start</li>
-                    <li>O co chodzi?</li>
-                    <li>O nas</li>
-                    <li>Fundacja i organizacje</li>
-                    <li>Kontakt</li>
+            <nav className="navigation-container">
+                <ul className="navigation-list">
+                    <li className="navigation-list_element">Start</li>
+                    <li className="navigation-list_element">O co chodzi?</li>
+                    <li className="navigation-list_element">O nas</li>
+                    <li className="navigation-list_element">Fundacja i organizacje</li>
+                    <li className="navigation-list_element">Kontakt</li>
                 </ul>
             </nav>
-            <div>
-                <h1>Zacznij pomagać <br/> Oddaj niechciane rzeczy w zaufane ręce</h1>
+            <div className="firstSection-heading-container">
+                <h1 className="firstSection-heading">Zacznij pomagać <br/> Oddaj niechciane rzeczy w zaufane ręce</h1>
                 <img src={Decoration} alt='decoration' />
-                <div>
-                    <button>Oddaj rzeczy</button>
-                    <button>zorganizuj zbiórkę</button>
+                <div className="firstSection-buttons">
+                    <button className="first-btn">Oddaj rzeczy</button>
+                    <button className="first-btn">zorganizuj zbiórkę</button>
                 </div>
             </div>
         </div>
