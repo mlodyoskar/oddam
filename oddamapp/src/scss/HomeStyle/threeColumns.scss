@@ -1,0 +1,35 @@
+@import "../settings/colors";
+
+.threeColumns-bg {
+  background-image: url(../../assets/ThreeColumnsBackground.png);
+  height: 384px;
+  .threeColumns {
+    display: flex;
+    justify-content: space-around;
+  }
+  .threeColumn_container {
+    display: flex;
+    flex-direction: column;
+    justify-content:center ;
+    align-items:center;
+    width: 334px;
+    .threeColumn-number {
+      font-size: 90px;
+      color: $threeColumn;
+      margin-top: 56px;
+    }
+    .threeColumn-heading{
+        color: $primary;
+        font-size: 18px;
+        margin-top: 20px;
+    }
+    .threeColumn-text{
+        color: $primary;
+        margin-top: 28px;
+        letter-spacing: -0.32px;
+        text-align: center;
+        font-size: 16px;
+        line-height: 22px
+    }
+  }
+}
