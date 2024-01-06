@@ -1,3 +1,5 @@
+@import '../settings/colors';
+
 .homeSectionContainer {
     display: flex;
   &_image {
@@ -7,8 +9,80 @@
     img {
         position: relative;
         left: -280px;
+    
       width: 885px;
       height: 100vh;
     }
   }
+}
+.login-container{
+margin-top: 37px;
+display: flex;
+justify-content: end;
+    .login-button{
+border: none;
+background-color: white;
+cursor: pointer;
+font-size: 14px;
+color: #737373;
+width: 90px;
+height: 36px;
+    }
+    .register-button{
+        border: 0.75px solid #FAD648;
+        background-color: white;
+        font-size: 14px;
+        color: #737373;
+        letter-spacing: 0px;
+        text-align: right;
+        width: 90px;
+height: 36px;
+    }
+}
+
+.navigation-container{
+    
+    .navigation-list{
+        display: flex;
+        gap: 55px;
+        margin-top: 24px;
+        justify-content: end;
+    }
+    .navigation-list_element{
+        width: auto;
+height: 42px;
+    }
+}
+
+.firstSection-heading-container{
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 38px;
+    margin-top: 110px;
+    &_img{
+        margin-top: 25px;
+    }
+    .firstSection-buttons{
+        margin-top: 78px;
+
+    .first-btn{
+        width: 310px;
+        height: 120px;
+border: 0.75px solid $btn-color-gray;
+        color: $btn-color-gray;
+        background: #00000000 0% 0% no-repeat padding-box;
+        text-align: center;
+        font-size: 36px;
+        text-wrap: wrap;
+        padding: 13px 60px;
+
+    }
+}
+}
+.first-btn:nth-of-type(1){
+    margin-right: 44px;
 }
