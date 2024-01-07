@@ -3,6 +3,7 @@ import MainSection from "./Home/MainSection";
 import ThreeColumns from "./Home/ThreeColumns";
 import Steps from "./Home/Steps";
 import AboutUs from "./Home/AboutUs";
+import WhoWeHelp from "./Home/WhoWeHelp";
 
 const Home=()=>{
 return(
@@ -11,6 +12,7 @@ return(
     <ThreeColumns/>
     <Steps/>
     <AboutUs/>
+    <WhoWeHelp/>
     </>
 );
 }
