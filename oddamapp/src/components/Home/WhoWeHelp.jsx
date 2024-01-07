@@ -6,8 +6,8 @@ const WhoWeHelp = () => {
     <>
       <section className="whoWeHelp-section">
         <div className="whoWeHelp-heading-block">
-            <div>
-          <h1 className="whoWeHelp-heading">Komu pomagamy?</h1>
+          <div>
+            <h1 className="whoWeHelp-heading">Komu pomagamy?</h1>
           </div>
           <img src={Decoration} alt="decoration" />
           <div className="three-btns">
@@ -16,36 +16,57 @@ const WhoWeHelp = () => {
             <button className="whoWeHelp-btn">Lokalnym zbiórkom</button>
           </div>
           <p className="whoWeHelp-description">
-          W naszej bazie znajdziesz listę zweryfikowanych Fundacji, z którymi współpracujemy. Możesz sprawdzić czym się zajmują, komu pomagają i czego potrzebują.
+            W naszej bazie znajdziesz listę zweryfikowanych Fundacji, z którymi
+            współpracujemy. Możesz sprawdzić czym się zajmują, komu pomagają i
+            czego potrzebują.
           </p>
           <div className="collection-containers">
             <div className="collection-container">
-              <h1 className="collection-container-heading">Fundacja “Dbam o Zdrowie"</h1>
+              <h1 className="collection-container-heading">
+                Fundacja “Dbam o Zdrowie"
+              </h1>
               <div className="collection-block border">
                 <p className="collection-block_description">
-                Cel i misja: Pomoc osobom znajdującym się w trudnej sytuacji życiowej.
+                  Cel i misja: Pomoc osobom znajdującym się w trudnej sytuacji
+                  życiowej.
                 </p>
-                <p className="collection-block-description2">ubrania, jedzenie, sprzęt AGD, meble, zabawki</p>
+                <p className="collection-block-description2">
+                  ubrania, jedzenie, sprzęt AGD, meble, zabawki
+                </p>
               </div>
             </div>
             <div className="collection-container">
-              <h1 className="collection-container-heading">Fundacja “Dla dzieci”</h1>
+              <h1 className="collection-container-heading">
+                Fundacja “Dla dzieci”
+              </h1>
               <div className="collection-block border">
                 <p className="collection-block_description">
-                Cel i misja: Pomoc dzieciom z ubogich rodzin.
+                  Cel i misja: Pomoc dzieciom z ubogich rodzin.
                 </p>
-                <p className="collection-block_description2">ubrania, meble, zabawki</p>
+                <p className="collection-block_description2">
+                  ubrania, meble, zabawki
+                </p>
               </div>
             </div>
             <div className="collection-container">
-              <h1 className="collection-container-heading">Fundacja “Bez domu”</h1>
-              <div className="collection-block" >
+              <h1 className="collection-container-heading">
+                Fundacja “Bez domu”
+              </h1>
+              <div className="collection-block">
                 <p className="collection-block_description">
-                Cel i misja: Pomoc dla osób nie posiadających miejsca zamieszkania.
+                  Cel i misja: Pomoc dla osób nie posiadających miejsca
+                  zamieszkania.
                 </p>
-                <p className="collection-block_description2">ubrania, jedzenie, ciepłe koce</p>
+                <p className="collection-block_description2">
+                  ubrania, jedzenie, ciepłe koce
+                </p>
               </div>
             </div>
+          </div>
+          <div className="page-numbers">
+            <div className="number">1</div>
+            <div className="number">2</div>
+            <div className="number">3</div>
           </div>
         </div>
       </section>

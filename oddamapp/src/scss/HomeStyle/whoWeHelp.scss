@@ -1,6 +1,6 @@
 @import "../settings/colors";
 @import "../settings/mixin";
-
+@import "../settings/fonts";
 .whoWeHelp-section {
   display: flex;
   flex-direction: column;
@@ -9,6 +9,7 @@
   .whoWeHelp-heading {
     font-size: 28px;
     margin-bottom: 30px;
+    font-family:$font-alt;
   }
 }
 .whoWeHelp-heading-block{
@@ -68,11 +69,33 @@ font-size: 22px;
 .collection-block{
     display: flex;
     justify-content: space-between;
-    color: $primary;
+   
     font-size: 17px;
     height: 50px;
     padding-right: 20px;
 }
 .border{
     border-bottom:1px solid $third ;
+}
+
+.page-numbers{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    width: 154px;
+    height: 50px;
+    color: $primary;
+    font-size: 18px;
+margin-top: 20px;
+   .number{
+    padding: 10px 12px;
+   }
+}
+.number:first-child{
+    border: 1px solid $third;
+}
+.collection-block_description{
+    color: $primary;
+    font-family: $font-alt;
 }
