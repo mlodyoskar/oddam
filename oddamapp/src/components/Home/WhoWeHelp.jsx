@@ -17,32 +17,32 @@ const WhoWeHelp = () => {
             eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
             ad minim veniam, quis nostrud exercitation.
           </p>
-          <div className="collection-container">
-            <div>
-              <h1>Zbiórka “Lorem Ipsum 1”</h1>
-              <div>
-                <p>
+          <div className="collection-containers">
+            <div className="collection-container">
+              <h1 className="collection-container-heading">Zbiórka “Lorem Ipsum 1”</h1>
+              <div className="collection-block">
+                <p className="collection-block_description">
                   Quis varius quam quisque id diam vel quam elementum pulvinar.
                 </p>
-                <p>Egestas, sed, tempus</p>
+                <p className="collection-block-description2">Egestas, sed, tempus</p>
               </div>
             </div>
-            <div>
-              <h1>Zbiórka “Lorem Ipsum 1”</h1>
-              <div>
-                <p>
+            <div className="collection-container">
+              <h1 className="collection-container-heading">Zbiórka “Lorem Ipsum 1”</h1>
+              <div className="collection-block">
+                <p className="collection-block_description">
                   Quis varius quam quisque id diam vel quam elementum pulvinar.
                 </p>
-                <p>Egestas, sed, tempus</p>
+                <p className="collection-block_description2">Egestas, sed, tempus</p>
               </div>
             </div>
-            <div>
-              <h1>Zbiórka “Lorem Ipsum 1”</h1>
+            <div className="collection-block">
+              <h1 className="collection-container-heading">Zbiórka “Lorem Ipsum 1”</h1>
               <div>
-                <p>
+                <p className="collection-block_description">
                   Quis varius quam quisque id diam vel quam elementum pulvinar.
                 </p>
-                <p>Egestas, sed, tempus</p>
+                <p className="collection-block_description2">Egestas, sed, tempus</p>
               </div>
             </div>
           </div>
