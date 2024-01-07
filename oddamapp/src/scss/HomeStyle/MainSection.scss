@@ -1,5 +1,5 @@
 @import "../settings/colors";
-
+@import '../settings/mixin';
 .homeSectionContainer {
   display: flex;
   &_image {
@@ -72,16 +72,7 @@
     margin-top: 78px;
 
     .first-btn {
-      width: 310px;
-      height: 120px;
-      border: 0.75px solid $primary;
-      color: $primary;
-      background: #00000000 0% 0% no-repeat padding-box;
-      text-align: center;
-      font-size: 36px;
-      text-wrap: wrap;
-      padding: 13px 60px;
-      text-transform: uppercase;
+    @include give-btn;
     }
   }
 }
