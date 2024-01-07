@@ -1,0 +1,42 @@
+@import "../settings/colors";
+
+
+.aboutUs{
+    display: flex;
+&_container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: $bg-color;
+}
+&_heading{
+    font-size: 34px;
+    color: $primary;
+    margin-top: 30px;
+}
+&_decoration{
+    margin-top: 32px;
+}
+&_description{
+    text-align: center;
+    font-size: 25px;
+    color: $primary;
+    padding: 0 114px;
+    margin-top: 25px;
+    letter-spacing: -0.6px;
+    line-height: 40px;
+   
+}
+}
+
+.img-people{
+    width: 50vw;
+    height: 600px;
+}
+
+.aboutUs_signature{
+    position: relative;
+    left: 150px;
+    margin-top: 20px;
+}
