@@ -4,10 +4,11 @@ import Shirt from "../../assets/Icon-1.svg";
 import Bag from "../../assets/Icon-2.svg";
 import Search from "../../assets/Icon-3.svg";
 import Repeat from "../../assets/Icon-4.svg";
+import "../../scss/HomeStyle/steps.scss";
 const Steps = () => {
   return (
     <>
-      <section className="fourSteps-bg">
+      <section className="fourSteps-section">
         <div className="fourColumns-heading-container">
           <h1 className="fourColumns-heading">Wystarczą 4 prostę kroki</h1>
           <img src={Decoration} alt="decoration" />
@@ -18,7 +19,7 @@ const Steps = () => {
             <p className="fourColumns_pick">Wybierz rzeczy</p>
             <div className="fourColumns_line"></div>
             <p className="fourColumn_description">
-              ubrania,zabawki,sprzęt i inne
+              ubrania, zabawki, sprzęt i inne
             </p>
           </div>
           <div className="fourColumns_element">
@@ -46,8 +47,8 @@ const Steps = () => {
             </p>
           </div>
         </div>
-        <div>
-            <button>oddaj rzeczy</button>
+        <div className="btn-container">
+            <button className="fourColumns-btn">oddaj rzeczy</button>
         </div>
       </section>
     </>

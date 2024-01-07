@@ -1,2 +1,74 @@
 @import "../settings/colors";
-@import '../settings/mixin';
+@import "../settings/mixin";
+
+.fourSteps-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 99%;
+}
+.fourColumns-heading-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  .fourColumns-heading {
+    font-size: 38px;
+    margin-top: 55px;
+    color: $primary;
+  }
+  img {
+    margin-top: 31px;
+  }
+}
+
+.fourColumns {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100vw;
+  height: 325px;
+  margin-top: 35px;
+  background-color: $bg-color;
+  &_element {
+    display: flex;
+    flex-direction: column;
+    width: 130px;
+    height: 172px;
+    img {
+      width: 83;
+      height: 83px;
+    }
+}
+&_pick{
+    text-align: center;
+    margin-top: 10px;
+    font-size: 18px;
+}
+&_line{
+    border-bottom: 1px solid $third;
+    margin-top: 10px;
+    width: 70px;
+    margin-left: 32px;
+}
+}
+.fourColumn_description{
+    margin-top: 10px;
+    text-align: center;
+    width: 134px;
+    font-size: 16px;
+    line-height: 1;
+    color:$primary;
+}
+.fourColumn_description:nth-child(4){
+    width: 148px;
+}
+.fourColumn_element:nth-child(3){
+    margin-top: 10px
+}
+.fourColumns-btn{
+    @include give-btn;
+    margin-top: 35px;
+    margin-bottom: 80px;
+}
