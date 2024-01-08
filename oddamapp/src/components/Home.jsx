@@ -4,6 +4,7 @@ import ThreeColumns from "./Home/ThreeColumns";
 import Steps from "./Home/Steps";
 import AboutUs from "./Home/AboutUs";
 import WhoWeHelp from "./Home/WhoWeHelp";
+import Contact from "./Home/Contact";
 
 const Home=()=>{
 return(
@@ -13,6 +14,7 @@ return(
     <Steps/>
     <AboutUs/>
     <WhoWeHelp/>
+    <Contact/>
     </>
 );
 }

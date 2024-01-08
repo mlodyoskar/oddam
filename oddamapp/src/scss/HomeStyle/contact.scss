@@ -1,0 +1,48 @@
+@import "../settings/colors";
+@import "../settings/fonts";
+
+.form-section{
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+}
+.form-bg{
+width: 100vw;
+height: 100vh;
+position:relative;
+left: 293px;
+opacity: 0.3;
+}
+.form-block{
+    position: relative;
+    z-index: 2;
+   right: 300px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-direction: column;
+}
+.form-heading-block{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    .form-heading{
+        font-size: 30px;
+        width: 358px;
+        display: flex;
+        justify-content: center;
+        margin-bottom: 20px;
+    }
+}
+
+.form-container{
+    display: flex;  
+  width: 600px;
+  
+}
+.two-labels{
+    display: flex;
+    flex-direction: column;
+}
