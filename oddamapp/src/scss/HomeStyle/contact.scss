@@ -17,7 +17,7 @@ opacity: 0.3;
 .form-block{
     position: relative;
     z-index: 2;
-   right: 300px;
+   right: 310px;
    display: flex;
    justify-content: center;
    align-items: center;
@@ -28,6 +28,9 @@ opacity: 0.3;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    img{
+        margin-bottom: 30px;
+    }
     .form-heading{
         font-size: 30px;
         width: 358px;
@@ -40,9 +43,43 @@ opacity: 0.3;
 .form-container{
     display: flex;  
   width: 600px;
+  justify-content: center;
+  align-items: center;
   
 }
 .two-labels{
     display: flex;
     flex-direction: column;
+    font-size: 16px;
+    input{
+        border: none;
+        border-bottom: 1px solid $third;
+        height: 26px;
+        width: 200px;
+        background-color: #fdfdfc;
+    }
+   
 }
+.row-columns{
+display: flex;
+gap: 20px;
+
+}
+.third-label{
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+    textarea{
+        border: none;
+        border-bottom: 1px solid $third;
+        height: 94px;
+        background-color: #fdfbf8;
+        resize: none;
+    }
+}
+input:focus {
+    outline: none;
+  }
+  textarea:focus{
+    outline: none;
+  }

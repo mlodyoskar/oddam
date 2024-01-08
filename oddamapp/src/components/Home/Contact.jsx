@@ -21,22 +21,21 @@ const Contact = () => {
           <form className="form-container">
             <div>
               <div className="row-columns">
-                <label className="two-labels" for="text">
+                <label className="two-labels" htmlFor="text">
                   Wpisz swoje imię
-                  <input type="text" />
+                  <input type="text" placeholder="Krzysztof"/>
                 </label>
-                <label className="two-labels" for="text">
+                <label className="two-labels" htmlFor="text">
                   Wpisz swój Email
-                  <input type="text" />
+                  <input type="text" placeholder="abc@xyz.pl" />
                 </label>
               </div>
               <div>
-                <label>
+                <label className="third-label">
                   Wpisz swoją wiadomość
-                  <textarea type="text" />
+                  <textarea type="text" placeholder="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat." />
                 </label>
               </div>
-
               <button>Wyślij</button>
             </div>
           </form>
