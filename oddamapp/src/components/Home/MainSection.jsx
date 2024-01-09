@@ -2,7 +2,8 @@ import React from "react";
 import "../../scss/HomeStyle/mainSection.scss";
 import HeroImage from "../../assets/Home-Hero-Image.jpg";
 import Decoration from "../../assets/Decoration.svg";
-import { Link } from "react-router-dom";
+import { Link as ScrollLink } from "react-scroll";
+import { Link as RouterLink } from "react-router-dom";
 const MainSection = () => {
   return (
     <>
@@ -13,18 +14,40 @@ const MainSection = () => {
         <div>
           <div>
             <div className="login-container">
-              <Link to="/logowanie">
+              <RouterLink to="/logowanie">
                 <button className="login-button">Zaloguj</button>
-              </Link>
-              <Link to="/rejestracja">
+              </RouterLink>
+              <RouterLink to="/rejestracja">
                 <button className="register-button">Załóż konto</button>
-              </Link>
+              </RouterLink>
             </div>
             <nav className="navigation-container">
               <ul className="navigation-list">
                 <li className="navigation-list_element">Start</li>
-                <li className="navigation-list_element">O co chodzi?</li>
-                <li className="navigation-list_element">O nas</li>
+
+                <li className="navigation-list_element">
+                  <ScrollLink
+                    to="steps"
+                    spy={true}
+                    smooth={true}
+                    offset={10}
+                    duration={500}
+                  >
+                    O co chodzi?
+                  </ScrollLink>
+                </li>
+
+                <li className="navigation-list_element">
+                  <ScrollLink
+                    to="about"
+                    spy={true}
+                    smooth={true}
+                    offset={-70}
+                    duration={500}
+                  >
+                    O nas
+                  </ScrollLink>
+                </li>
                 <li className="navigation-list_element">
                   Fundacja i organizacje
                 </li>
@@ -42,8 +65,12 @@ const MainSection = () => {
               alt="decoration"
             />
             <div className="firstSection-buttons">
-             <Link to='/logowanie'><button className="first-btn">Oddaj rzeczy</button></Link>
-             <Link to='/logowanie'><button className="first-btn">zorganizuj zbiórkę</button></Link>
+              <RouterLink to="/logowanie">
+                <button className="first-btn">Oddaj rzeczy</button>
+              </RouterLink>
+              <RouterLink to="/logowanie">
+                <button className="first-btn">zorganizuj zbiórkę</button>
+              </RouterLink>
             </div>
           </div>
         </div>

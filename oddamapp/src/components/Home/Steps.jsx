@@ -9,7 +9,7 @@ import { Link } from "react-router-dom";
 const Steps = () => {
   return (
     <>
-      <section className="fourSteps-section">
+      <section className="fourSteps-section" id="steps">
         <div className="fourColumns-heading-container">
           <h1 className="fourColumns-heading">Wystarczą 4 prostę kroki</h1>
           <img src={Decoration} alt="decoration" />
@@ -28,28 +28,29 @@ const Steps = () => {
             <p className="fourColumns_pick">Spakuj je</p>
             <div className="fourColumns_line"></div>
             <p className="fourColumn_description">
-            skorzystaj z worków na śmieci
+              skorzystaj z worków na śmieci
             </p>
           </div>
           <div className="fourColumns_element">
             <img src={Search} alt="shirt" />
             <p className="fourColumns_pick">Zdecyduj komu chcesz pomóc</p>
             <div className="fourColumns_line"></div>
-            <p className="fourColumn_description">
-            wybierz zaufane miejsce
-            </p>
+            <p className="fourColumn_description">wybierz zaufane miejsce</p>
           </div>
           <div className="fourColumns_element">
             <img src={Repeat} alt="shirt" />
             <p className="fourColumns_pick">Zamów kuriera</p>
             <div className="fourColumns_line"></div>
             <p className="fourColumn_description">
-            kurier przyjedzie w dogodnym terminie
+              kurier przyjedzie w dogodnym terminie
             </p>
           </div>
         </div>
         <div className="btn-container">
-        <Link to='logowanie'><button className="fourColumns-btn">oddaj rzeczy</button></Link>
+          <Link to="/logowanie">
+      
+            <button className="fourColumns-btn">oddaj rzeczy</button>
+          </Link>
         </div>
       </section>
     </>
