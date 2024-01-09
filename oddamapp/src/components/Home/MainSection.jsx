@@ -2,6 +2,7 @@ import React from "react";
 import "../../scss/HomeStyle/mainSection.scss";
 import HeroImage from "../../assets/Home-Hero-Image.jpg";
 import Decoration from "../../assets/Decoration.svg";
+import { Link } from "react-router-dom";
 const MainSection = () => {
   return (
     <>
@@ -12,8 +13,12 @@ const MainSection = () => {
         <div>
           <div>
             <div className="login-container">
-              <button className="login-button">Zaloguj</button>
-              <button className="register-button">Załóż konto</button>
+              <Link to="/logowanie">
+                <button className="login-button">Zaloguj</button>
+              </Link>
+              <Link to="/rejestracja">
+                <button className="register-button">Załóż konto</button>
+              </Link>
             </div>
             <nav className="navigation-container">
               <ul className="navigation-list">
@@ -31,10 +36,14 @@ const MainSection = () => {
             <h1 className="firstSection-heading">
               Zacznij pomagać <br /> Oddaj niechciane rzeczy w zaufane ręce
             </h1>
-            <img className='firstSection-heading-container_img' src={Decoration} alt="decoration" />
+            <img
+              className="firstSection-heading-container_img"
+              src={Decoration}
+              alt="decoration"
+            />
             <div className="firstSection-buttons">
-              <button className="first-btn">Oddaj rzeczy</button>
-              <button className="first-btn">zorganizuj zbiórkę</button>
+             <Link to='/logowanie'><button className="first-btn">Oddaj rzeczy</button></Link>
+             <Link to='/logowanie'><button className="first-btn">zorganizuj zbiórkę</button></Link>
             </div>
           </div>
         </div>

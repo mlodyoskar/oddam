@@ -5,6 +5,7 @@ import Bag from "../../assets/Icon-2.svg";
 import Search from "../../assets/Icon-3.svg";
 import Repeat from "../../assets/Icon-4.svg";
 import "../../scss/HomeStyle/steps.scss";
+import { Link } from "react-router-dom";
 const Steps = () => {
   return (
     <>
@@ -48,7 +49,7 @@ const Steps = () => {
           </div>
         </div>
         <div className="btn-container">
-            <button className="fourColumns-btn">oddaj rzeczy</button>
+        <Link to='logowanie'><button className="fourColumns-btn">oddaj rzeczy</button></Link>
         </div>
       </section>
     </>
