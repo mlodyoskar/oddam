@@ -4,11 +4,9 @@ import "../../scss/HomeStyle/whoWeHelp.scss";
 const WhoWeHelp = () => {
   return (
     <>
-      <section className="whoWeHelp-section">
+      <section className="whoWeHelp-section" id="whoWeHelp">
         <div className="whoWeHelp-heading-block">
-          <div>
-            <h1 className="whoWeHelp-heading">Komu pomagamy?</h1>
-          </div>
+          <h1 className="whoWeHelp-heading">Komu pomagamy?</h1>
           <img src={Decoration} alt="decoration" />
           <div className="three-btns">
             <button className="whoWeHelp-btn">Fundacjom</button>

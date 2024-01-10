@@ -7,7 +7,7 @@ import Instagram from "../../assets/Instagram.svg";
 const Contact = () => {
   return (
     <>
-      <section className="form-section">
+      <section className="form-section" id="contact">
         <div>
           <img
             className="form-bg"

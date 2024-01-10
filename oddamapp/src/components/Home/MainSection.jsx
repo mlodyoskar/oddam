@@ -48,10 +48,23 @@ const MainSection = () => {
                     O nas
                   </ScrollLink>
                 </li>
-                <li className="navigation-list_element">
+                <li className="navigation-list_element"><ScrollLink
+                    to="whoWeHelp"
+                    spy={true}
+                    smooth={true}
+                    offset={15}
+                    duration={500}
+                    >
                   Fundacja i organizacje
+                  </ScrollLink>
                 </li>
-                <li className="navigation-list_element">Kontakt</li>
+                <li className="navigation-list_element"><ScrollLink
+                    to="contact"
+                    spy={true}
+                    smooth={true}
+                    offset={100}
+                    duration={500}
+                  >Kontakt</ScrollLink></li>
               </ul>
             </nav>
           </div>
