@@ -1,6 +1,6 @@
 import React from "react";
 import { Link as ScrollLink } from "react-scroll";
-import { Link as RouterLink } from "react-router-dom";
+import { Link, Link as RouterLink } from "react-router-dom";
 import '../../scss/HomeStyle/navigation.scss'
 const Navigation = () =>{
 return(
@@ -17,7 +17,7 @@ return(
             </div>
             <nav className="navigation-container">
               <ul className="navigation-list">
-                <li className="navigation-list_element">Start</li>
+             <li className={`navigation-list_element ${window.location.pathname === '/' ? 'active' : ''}`}> <Link to='/'>  Start</Link></li>
 
                 <li className="navigation-list_element">
                   <ScrollLink
