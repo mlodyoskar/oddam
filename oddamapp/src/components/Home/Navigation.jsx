@@ -1,13 +1,14 @@
 import React from "react";
 import { Link as ScrollLink } from "react-scroll";
 import { Link as RouterLink } from "react-router-dom";
+import '../../scss/HomeStyle/navigation.scss'
 const Navigation = () =>{
 return(
     <>
-  <section>
-  <div>
+  <section className="nav-section">
+  
             <div className="login-container">
-              <RouterLink to="/logowanie">
+              <RouterLink to="/logowanie" >
                 <button className="login-button">Zaloguj</button>
               </RouterLink>
               <RouterLink to="/rejestracja">
@@ -60,7 +61,7 @@ return(
                   >Kontakt</ScrollLink></li>
               </ul>
             </nav>
-          </div>
+        
     </section>  
     </>
 );

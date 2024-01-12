@@ -14,50 +14,7 @@
     }
   }
 }
-.login-container {
-  margin-top: 37px;
-  display: flex;
-  justify-content: end;
-  .login-button {
-    border: none;
-    background-color: white;
-    cursor: pointer;
-    font-size: 14px;
-    color: #737373;
-    width: 90px;
-    height: 36px;
-  }
-  .register-button {
-    border: 0.75px solid #fad648;
-    background-color: white;
-    font-size: 14px;
-    color: #737373;
-    letter-spacing: 0px;
-    text-align: right;
-    width: 90px;
-    height: 36px;
-    cursor: pointer;
-  }
-}
 
-.navigation-container {
-  .navigation-list {
-    display: flex;
-    gap: 30px;
-    margin-top: 24px;
-    justify-content: end;
-  }
-  .navigation-list_element {
-    width: auto;
-    height: 20px;
-    text-align: center;
-    padding: 5px 10px;
-    cursor: pointer;
-  }
-  .navigation-list_element:nth-of-type(1) {
-    border: 0.75px solid $primary;
-  }
-}
 
 .firstSection-heading-container {
   display: flex;

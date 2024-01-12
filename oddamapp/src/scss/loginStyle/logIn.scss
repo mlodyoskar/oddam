@@ -1,0 +1,20 @@
+
+
+.log-section{
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+}
+
+.log-heading-block{
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+margin-top: 100px;
+    .log-heading{
+font-size: 35px;
+margin-bottom: 20px;
+    }
+}
