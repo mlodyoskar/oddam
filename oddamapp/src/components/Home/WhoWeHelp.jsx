@@ -25,25 +25,6 @@ const WhoWeHelp = () => {
     }
   }
 
-  // const [selectedPage, setSelectedPage] = useState('fundacjom');
-  // const [pageData, setPageData] = useState([]);
-  
-  
-  // useEffect(()=>{
-  //     getFundation();
-  // },[selectedPage])
-  // async function getFundation() {
-  //     try{
-  //         const {data, error } = await supabase.from(selectedPage).select('*');
-  //         if (error) throw error;
-  //         if (data != null) {
-  //             setPageData(data);
-  //         }
-  //     } catch (error){
-  //         alert(error.message);
-  //     }
-  // }
-
   return (
     <>
       <section className="whoWeHelp-section" id="whoWeHelp">
