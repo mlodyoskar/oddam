@@ -2,40 +2,30 @@ import React, { useEffect, useState } from "react";
 import Decoration from "../../assets/Decoration.svg";
 import "../../scss/HomeStyle/whoWeHelp.scss";
 import { supabase } from "../../supabase";
+
 const WhoWeHelp = () => {
+  const [fetchData, setFetchData] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState("fundacjom");
-  const [data, setData] = useState([]);
+
   useEffect(() => {
+    getProducts();
+  }, [selectedCategory]);
+  useEffect(() => {
+    getProducts();
+  }, []);
 
-  const fetchData = async () => {
-    let tableName;
-
-    switch (selectedCategory) {
-      case "fundacjom":
-        tableName = "fundacjom";
-        break;
-      case "organizacjom_pozarzadowym":
-        tableName = "organizacjom_pozarzadowym";
-        break;
-      case "lokalnym_zbiorkom":
-        tableName = "lokalnym_zbiorkom";
-        break;
-      default:
-        tableName = "fundacjom";
-    }  
-    const { data, error } = await supabase.from(tableName).select(`id,title,description,things`);
-    
-    if (error) {
-      console.error("Error fetching data:", error);
-    } else {
-      setData(data);
-     
+  async function getProducts() {
+    try {
+      const { data, error } = await supabase.from(selectedCategory).select("*");
+      if (error) throw error;
+      if (data != null) {
+        setFetchData(data);
+      }
+    } catch (error) {
+      alert(error.message);
     }
-    
-  };
-      fetchData();
-    }, [selectedCategory]);
-console.log(data);
+  }
+
   return (
     <>
       <section className="whoWeHelp-section" id="whoWeHelp">
@@ -68,46 +58,47 @@ console.log(data);
             czego potrzebują.
           </p>
           <div className="collection-containers">
-          {data.map((item) => (
-  <div className="collection-container">
-    <h1 className="collection-container-heading">{item.title}</h1>
-    <div className="collection-block border">
-      <p className="collection-block_description">{item.description}</p>
-      <p className="collection-block-description2">{item.things}</p>
-    </div>
-  </div>
-))}
-            {data.map((item) => (
+            {fetchData.map((item) => (
               <div key={item.id} className="collection-container">
+                <h1 className="collection-container-heading">{item.title}</h1>
+                <div className="collection-block border">
+                  <p className="collection-block_description">
+                    {item.description}
+                  </p>
+                  <p className="collection-block-description2">{item.things}</p>
+                </div>
+              </div>
+            ))}
+            {/* {fetchData.map((organizacjom) => (
+              <div  className="collection-container">
                 <h1 className="collection-container-heading">
-                  Fundacja “Dla dzieci”
+                {organizacjom.title}
                 </h1>
                 <div className="collection-block border">
                   <p className="collection-block_description">
-                    Cel i misja: Pomoc dzieciom z ubogich rodzin.
+                  {organizacjom.description}
                   </p>
                   <p className="collection-block_description2">
-                    ubrania, meble, zabawki
+                  {organizacjom.things}
                   </p>
                 </div>
               </div>
-            ))}
-            {data.map((item) => (
-              <div className="collection-container">
+              ))}
+            {fetchData.map((zbiorkom) => (
+              <div  className="collection-container">
                 <h1 className="collection-container-heading">
-                  Fundacja “Bez domu”
+                {zbiorkom.title}
                 </h1>
                 <div className="collection-block">
                   <p className="collection-block_description">
-                    Cel i misja: Pomoc dla osób nie posiadających miejsca
-                    zamieszkania.
+                  {zbiorkom.description}
                   </p>
                   <p className="collection-block_description2">
-                    ubrania, jedzenie, ciepłe koce
+                  {zbiorkom.things}
                   </p>
                 </div>
               </div>
-            ))}
+            ))} */}
           </div>
 
           <div className="page-numbers">

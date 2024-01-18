@@ -5,6 +5,7 @@ import "../../scss/HomeStyle/contact.scss";
 import Facebook from "../../assets/Facebook.svg";
 import Instagram from "../../assets/Instagram.svg";
 const Contact = () => {
+  
   return (
     <>
       <section className="form-section" id="contact">
