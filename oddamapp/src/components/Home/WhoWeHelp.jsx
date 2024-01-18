@@ -3,6 +3,7 @@ import Decoration from "../../assets/Decoration.svg";
 import "../../scss/HomeStyle/whoWeHelp.scss";
 import { supabase } from "../../supabase";
 
+
 const WhoWeHelp = () => {
   const [fetchData, setFetchData] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState("fundacjom");
@@ -10,9 +11,7 @@ const WhoWeHelp = () => {
   useEffect(() => {
     getProducts();
   }, [selectedCategory]);
-  useEffect(() => {
-    getProducts();
-  }, []);
+ 
 
   async function getProducts() {
     try {
@@ -25,6 +24,25 @@ const WhoWeHelp = () => {
       alert(error.message);
     }
   }
+
+  // const [selectedPage, setSelectedPage] = useState('fundacjom');
+  // const [pageData, setPageData] = useState([]);
+  
+  
+  // useEffect(()=>{
+  //     getFundation();
+  // },[selectedPage])
+  // async function getFundation() {
+  //     try{
+  //         const {data, error } = await supabase.from(selectedPage).select('*');
+  //         if (error) throw error;
+  //         if (data != null) {
+  //             setPageData(data);
+  //         }
+  //     } catch (error){
+  //         alert(error.message);
+  //     }
+  // }
 
   return (
     <>
@@ -57,54 +75,23 @@ const WhoWeHelp = () => {
             współpracujemy. Możesz sprawdzić czym się zajmują, komu pomagają i
             czego potrzebują.
           </p>
+            {fetchData.map((item, index) => (
           <div className="collection-containers">
-            {fetchData.map((item) => (
               <div key={item.id} className="collection-container">
                 <h1 className="collection-container-heading">{item.title}</h1>
-                <div className="collection-block border">
+                <div className={`collection-block ${index === fetchData.length - 1 ? '' : 'border'}`}>
                   <p className="collection-block_description">
                     {item.description}
                   </p>
                   <p className="collection-block-description2">{item.things}</p>
                 </div>
               </div>
-            ))}
-            {/* {fetchData.map((organizacjom) => (
-              <div  className="collection-container">
-                <h1 className="collection-container-heading">
-                {organizacjom.title}
-                </h1>
-                <div className="collection-block border">
-                  <p className="collection-block_description">
-                  {organizacjom.description}
-                  </p>
-                  <p className="collection-block_description2">
-                  {organizacjom.things}
-                  </p>
-                </div>
-              </div>
-              ))}
-            {fetchData.map((zbiorkom) => (
-              <div  className="collection-container">
-                <h1 className="collection-container-heading">
-                {zbiorkom.title}
-                </h1>
-                <div className="collection-block">
-                  <p className="collection-block_description">
-                  {zbiorkom.description}
-                  </p>
-                  <p className="collection-block_description2">
-                  {zbiorkom.things}
-                  </p>
-                </div>
-              </div>
-            ))} */}
           </div>
-
+            ))}
           <div className="page-numbers">
-            <div className="number">1</div>
-            <div className="number">2</div>
-            <div className="number">3</div>
+            <div className="number" onClick={()=> setSelectedCategory('fundacjom')}>1</div>
+            <div className="number" onClick={()=> setSelectedCategory('fundacjom1')}>2</div>
+            <div className="number" onClick={()=> setSelectedCategory('fundacjom2')}>3</div>
           </div>
         </div>
       </section>
