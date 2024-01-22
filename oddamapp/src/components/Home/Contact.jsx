@@ -48,7 +48,6 @@ const Contact = () => {
             </div>
           </form>
         </div>
-      </section>
       <footer className="footer-block">
         <div className="Copyright-block">
           <p>Copyright by Coders Lab</p>
@@ -58,6 +57,7 @@ const Contact = () => {
           <img src={Instagram} alt="Instagram icon" />
         </div>
       </footer>
+      </section>
     </>
   );
 };
