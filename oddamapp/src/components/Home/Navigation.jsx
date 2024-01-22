@@ -10,7 +10,7 @@ const Navigation = () => {
           <RouterLink to="/logowanie">
             <button className="login-button">Zaloguj</button>
           </RouterLink>
-          <RouterLink to="/rejestracja">
+          <RouterLink to="/registration">
             <button className="register-button">Załóż konto</button>
           </RouterLink>
         </div>
