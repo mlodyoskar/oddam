@@ -15,7 +15,7 @@ const WhoWeHelp = () => {
 
   async function getProducts() {
     try {
-      const { data, error } = await supabase.from(selectedCategory).select("*");
+      const { data, error } = await supabase.from(selectedCategory).select("fundacjom");
       if (error) throw error;
       if (data != null) {
         setFetchData(data);

@@ -59,10 +59,12 @@ width: 1100px;
     .register-btn{
         border: none;
         background: none;
+        cursor: pointer;
     }
     .log-btn{
         background: none;
         border: 1px solid $primary;
         padding: 10px 15px;
+        cursor: pointer;
     }
 }
