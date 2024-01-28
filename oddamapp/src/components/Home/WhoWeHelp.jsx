@@ -3,29 +3,40 @@ import Decoration from "../../assets/Decoration.svg";
 import "../../scss/HomeStyle/whoWeHelp.scss";
 import { supabase } from "../../supabase";
 
-
 const WhoWeHelp = () => {
   const [fetchData, setFetchData] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState("fundacje");
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 3;
 
   useEffect(() => {
     getProducts();
-  }, [selectedCategory]);
- 
+  }, [selectedCategory, currentPage]);
 
   async function getProducts() {
     try {
-      let { data, error } = await supabase.from("fundacjom").select("*").eq('type',selectedCategory);
+      let { data, error } = await supabase.from("fundacjom").select("*").eq('type', selectedCategory);
       if (error) throw error;
       if (data != null) {
         setFetchData(data);
       }
-      console.log(data);
     } catch (error) {
       alert(error.message);
     }
   }
-  
+
+  useEffect(() => {
+    setCurrentPage(1);
+    getProducts();
+  }, [selectedCategory]);
+
+  const indexOfLastItem = currentPage * itemsPerPage;
+  const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+  const currentItems = fetchData.slice(indexOfFirstItem, indexOfLastItem);
+
+  const totalPages = Math.ceil(fetchData.length / itemsPerPage);
+  const pageNumbers = Array.from({ length: totalPages }, (_, index) => index + 1);
+
   return (
     <>
       <section className="whoWeHelp-section" id="whoWeHelp">
@@ -33,48 +44,44 @@ const WhoWeHelp = () => {
           <h1 className="whoWeHelp-heading">Komu pomagamy?</h1>
           <img src={Decoration} alt="decoration" />
           <div className="three-btns">
-            <button
-              className="whoWeHelp-btn"
-              onClick={() => setSelectedCategory("fundacje")}
-            >
+            <button className="whoWeHelp-btn" onClick={() => setSelectedCategory("fundacje")}>
               Fundacjom
             </button>
-            <button
-              className="whoWeHelp-btn"
-              onClick={() => setSelectedCategory("organizacjom")}
-            >
+            <button className="whoWeHelp-btn" onClick={() => setSelectedCategory("organizacjom")}>
               Organizacjom pozarządowym
             </button>
-            <button
-              className="whoWeHelp-btn"
-              onClick={() => setSelectedCategory("zbiorkom")}
-            >
+            <button className="whoWeHelp-btn" onClick={() => setSelectedCategory("zbiorkom")}>
               Lokalnym zbiórkom
             </button>
           </div>
           <p className="whoWeHelp-description">
-            W naszej bazie znajdziesz listę zweryfikowanych Fundacji, z którymi
-            współpracujemy. Możesz sprawdzić czym się zajmują, komu pomagają i
-            czego potrzebują.
+            W naszej bazie znajdziesz listę zweryfikowanych Fundacji, z którymi współpracujemy. Możesz sprawdzić czym się
+            zajmują, komu pomagają i czego potrzebują.
           </p>
-            {fetchData.slice(0,3).map((item) => (
-          <div className="collection-containers">
-              <div key={item.id} className="collection-container">
+          {currentItems.map((item) => (
+            <div className="collection-containers" key={item.id}>
+              <div className="collection-container">
                 <h1 className="collection-container-heading">{item.title}</h1>
-                <div className='collection-block'>
-                  <p className="collection-block_description">
-                    {item.description}
-                  </p>
+                <div className="collection-block">
+                  <p className="collection-block_description">{item.description}</p>
                   <p className="collection-block-description2">{item.things}</p>
                 </div>
               </div>
-          </div>
-            ))}
-          <div className="page-numbers">
-            <div className="number"  onClick={() => setFetchData.slice(0,3)}>1</div>
-            <div className="number"  onClick={() => fetchData.slice(4,6)}>2</div>
-            <div className="number"  onClick={() => fetchData.slice(7,9)}>3</div>
-          </div>
+            </div>
+          ))}
+          {totalPages > 1 && (
+            <div className="page-numbers">
+              {pageNumbers.map((number) => (
+                <div
+                  className={`number ${number === currentPage ? 'active' : ''}`}
+                  key={number}
+                  onClick={() => setCurrentPage(number)}
+                >
+                  {number}
+                </div>
+              ))}
+            </div>
+          )}
         </div>
       </section>
     </>

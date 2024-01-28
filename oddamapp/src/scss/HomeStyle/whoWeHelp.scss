@@ -91,11 +91,14 @@ margin-top: 20px;
    .number{
     padding: 10px 12px;
     cursor: pointer;
+    &.active{
+        border: 1px solid $third;
+    }
    }
 }
-.number:first-child{
-    border: 1px solid $third;
-}
+// .number:first-child{
+//     border: 1px solid $third;
+// }
 .collection-block_description{
     color: $primary;
     font-family: $font-alt;
