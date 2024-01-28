@@ -6,7 +6,7 @@ import { supabase } from "../../supabase";
 
 const WhoWeHelp = () => {
   const [fetchData, setFetchData] = useState([]);
-  const [selectedCategory, setSelectedCategory] = useState("fundacjom");
+  const [selectedCategory, setSelectedCategory] = useState("fundacje");
 
   useEffect(() => {
     getProducts();
@@ -15,16 +15,17 @@ const WhoWeHelp = () => {
 
   async function getProducts() {
     try {
-      const { data, error } = await supabase.from(selectedCategory).select("fundacjom");
+      let { data, error } = await supabase.from("fundacjom").select("*").eq('type',selectedCategory);
       if (error) throw error;
       if (data != null) {
         setFetchData(data);
       }
+      console.log(data);
     } catch (error) {
       alert(error.message);
     }
   }
-
+  
   return (
     <>
       <section className="whoWeHelp-section" id="whoWeHelp">
@@ -34,19 +35,19 @@ const WhoWeHelp = () => {
           <div className="three-btns">
             <button
               className="whoWeHelp-btn"
-              onClick={() => setSelectedCategory("fundacjom")}
+              onClick={() => setSelectedCategory("fundacje")}
             >
               Fundacjom
             </button>
             <button
               className="whoWeHelp-btn"
-              onClick={() => setSelectedCategory("organizacjom_pozarzadowym")}
+              onClick={() => setSelectedCategory("organizacjom")}
             >
               Organizacjom pozarządowym
             </button>
             <button
               className="whoWeHelp-btn"
-              onClick={() => setSelectedCategory("lokalnym_zbiorkom")}
+              onClick={() => setSelectedCategory("zbiorkom")}
             >
               Lokalnym zbiórkom
             </button>
@@ -56,11 +57,11 @@ const WhoWeHelp = () => {
             współpracujemy. Możesz sprawdzić czym się zajmują, komu pomagają i
             czego potrzebują.
           </p>
-            {fetchData.map((item, index) => (
+            {fetchData.slice(0,3).map((item) => (
           <div className="collection-containers">
               <div key={item.id} className="collection-container">
                 <h1 className="collection-container-heading">{item.title}</h1>
-                <div className={`collection-block ${index === fetchData.length - 1 ? '' : 'border'}`}>
+                <div className='collection-block'>
                   <p className="collection-block_description">
                     {item.description}
                   </p>
@@ -70,9 +71,9 @@ const WhoWeHelp = () => {
           </div>
             ))}
           <div className="page-numbers">
-            <div className="number" onClick={()=> setSelectedCategory('fundacjom')}>1</div>
-            <div className="number" onClick={()=> setSelectedCategory('fundacjom1')}>2</div>
-            <div className="number" onClick={()=> setSelectedCategory('fundacjom2')}>3</div>
+            <div className="number"  onClick={() => setFetchData.slice(0,3)}>1</div>
+            <div className="number"  onClick={() => fetchData.slice(4,6)}>2</div>
+            <div className="number"  onClick={() => fetchData.slice(7,9)}>3</div>
           </div>
         </div>
       </section>
