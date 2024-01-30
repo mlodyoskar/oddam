@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Navigation from "../Home/Navigation";
 import Decoration from "../../assets/Decoration.svg";
 import '../../scss/loginStyle/logIn.scss'
-import { Link as RouterLink } from "react-router-dom";
+import { Link as RouterLink, Navigate } from "react-router-dom";
 import { supabase } from "../../supabase";
 const LogIn = () => {
 
@@ -10,6 +10,7 @@ const LogIn = () => {
   const [password, setPassword] = useState("");
   const [emailError, setEmailError] = useState("");
   const [passwordError, setPasswordError] = useState("");
+  const [redirect, setRedirect] = useState(false);
 
   const validateForm = () => {
     let isValid = true;
@@ -41,6 +42,7 @@ try{
     console.error('Bład logowania:', error);
   }else{
     console.log('Zalogowano pomyślnie', user);
+    setRedirect(true);
   }
 }catch (error){
   console.error('Bład logowania:', error.message);
@@ -53,6 +55,7 @@ try{
 
   return (
     <>
+    {redirect && <Navigate to={'/'}/>}
       <Navigation/>
       <section className="log-section">
         <div className="log-heading-block">

@@ -1,18 +1,53 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link as ScrollLink } from "react-scroll";
 import { Link, Link as RouterLink } from "react-router-dom";
 import "../../scss/HomeStyle/navigation.scss";
+import { supabase } from "../../supabase";
 const Navigation = () => {
+  const [user, setUser] = useState(null);
+
+  useEffect(() => {
+    const fetchUser = async () => {
+      const {
+        data: { user },
+      } = await supabase.auth.getUser();
+      console.log(user);
+      setUser(user);
+    };
+
+    fetchUser();
+  }, []);
+
+  const handleLogout = async () => {
+    await supabase.auth.signOut();
+    setUser(null);
+  };
+
   return (
     <>
       <section className="nav-section">
         <div className="login-container">
-          <RouterLink to="/logowanie">
-            <button className="login-button">Zaloguj</button>
-          </RouterLink>
-          <RouterLink to="/registration">
-            <button className="register-button">Załóż konto</button>
-          </RouterLink>
+          {user ? (
+            <>
+              <p>Cześć {user.email}</p>
+              <button className="nav-log-btn">Oddaj rzeczy</button>
+              <RouterLink to={'/LogOut'}>
+              <button onClick={handleLogout} className="logOut-btn">
+                Wyloguj się
+              </button>
+              </RouterLink>
+            </>
+          ) : (
+            <>
+             
+              <RouterLink to="/logowanie">
+                <button className="login-button">Zaloguj</button>
+              </RouterLink>
+              <RouterLink to="/registration">
+                <button className="register-button">Załóż konto</button>
+              </RouterLink>
+            </>
+          )}
         </div>
         <nav className="navigation-container">
           <ul className="navigation-list">

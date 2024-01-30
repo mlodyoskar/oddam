@@ -3,6 +3,8 @@
     margin-top: 37px;
     display: flex;
     justify-content: end;
+    align-items: center;
+    gap: 10px;
     .login-button {
       border: none;
       background-color: white;
@@ -53,5 +55,16 @@
 
   .nav-section{
 margin-right: 100px;
-
   }
+
+  .nav-log-btn{
+    border: 1px solid gold;
+    background: none;
+    padding: 5px 10px;
+    cursor: pointer;
+  }
+.logOut-btn{
+  background: none;
+  border: none;
+  cursor: pointer;
+}
