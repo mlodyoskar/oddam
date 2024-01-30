@@ -2,6 +2,7 @@ import React from "react";
 import Navigation from "../Home/Navigation";
 import Decoration from "../../assets/Decoration.svg";
 import '../../scss/loginStyle/logIn.scss'
+import { Link as RouterLink } from "react-router-dom";
 const LogIn = () => {
   return (
     <>
@@ -22,8 +23,8 @@ const LogIn = () => {
             </div>
         </form>
         <div className="log-btn-block">
-            <button className="register-btn">Załóż konto</button>
-            <button className="log-btn">Zaloguj się </button>
+        <RouterLink to="/registration">  <button className="register-btn">Załóż konto</button> </RouterLink>
+        <button className="log-btn">Zaloguj się </button>
         </div>
       </section>
     </>

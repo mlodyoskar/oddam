@@ -54,7 +54,10 @@ const Contact = () => {
       if (response.status === 200) {
         // Obsługa poprawnego wysłania formularza
         setIsFormSubmitted(true);
-        setFormData(initialFormData); // Resetowanie pól wejściowych do pustych wartości
+        setTimeout(() => {
+          setIsFormSubmitted(false);
+        }, 10000);
+        setFormData(initialFormData); 
         console.log("Formularz wysłany pomyślnie!");
       } else if (response.status === 400) {
         // Obsługa błędów walidacji
