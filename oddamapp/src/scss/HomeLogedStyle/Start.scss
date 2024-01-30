@@ -1,0 +1,74 @@
+@import "../settings/colors";
+@import "../settings/fonts";
+
+.start-section {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-right: 200px;
+  margin-top: 100px;
+  .start-img {
+    width: 735px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+}
+
+.start-heading {
+  font-size: 30px;
+  width: 502px;
+  text-wrap: wrap;
+  text-align: center;
+  color: $primary;
+  margin-bottom: 20px;
+}
+
+.stepsContainer {
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.start-text {
+  color: $primary;
+  font-size: 30px;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+.fourSteps {
+  display: flex;
+  gap: 30px;
+  margin-top: 55px;
+}
+
+.step-block {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid black;
+  width: 140px;
+  height: 140px;
+  rotate: 45deg;
+}
+.step-block-number {
+  color: $primary;
+  rotate: -45deg;
+  position: absolute;
+  top: 10px;
+  left: 15px;
+  font-size: 26px;
+}
+
+.steps-text{
+width: 81px;
+text-align: center;
+rotate: -45deg;
+color: $primary;
+font-size: 19px;
+}

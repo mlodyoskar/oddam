@@ -30,7 +30,7 @@ const Navigation = () => {
           {user ? (
             <>
               <p>Cześć {user.email}</p>
-              <button className="nav-log-btn">Oddaj rzeczy</button>
+             <RouterLink to={'/LogedSection'}><button className="nav-log-btn">Oddaj rzeczy</button></RouterLink> 
               <RouterLink to={'/LogOut'}>
               <button onClick={handleLogout} className="logOut-btn">
                 Wyloguj się
