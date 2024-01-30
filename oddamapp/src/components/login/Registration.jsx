@@ -76,17 +76,17 @@ const Registration = () => {
         <form className="log-form">
           <div className="input-block">
             <label>Email</label>
-            <input type="text" value={email} onChange={(e)=>setEmail(e.target.value)}/>
+            <input className={emailError ? "error-input" : ""} type="text" value={email} onChange={(e)=>setEmail(e.target.value)}/>
             <span className="error-message">{emailError}</span>
           </div>
           <div className="input-block">
             <label htmlFor="password">Hasło</label>
-            <input type="password" value={password} onChange={(e)=> setPassword(e.target.value)}/>
+            <input className={passwordError ? "error-input" : ""}  type="password" value={password} onChange={(e)=> setPassword(e.target.value)}/>
             <span className="error-message">{passwordError}</span>
           </div>
           <div className="input-block">
             <label htmlFor="password">powtórz Hasło</label>
-            <input type="password" value={confirmPassword} onChange={(e)=>setConfirmPassword(e.target.value)}/>
+            <input className={confirmPasswordError ? "error-input" : ""} type="password" value={confirmPassword} onChange={(e)=>setConfirmPassword(e.target.value)}/>
             <span className="error-message">{confirmPasswordError}</span>
           </div>
         </form>

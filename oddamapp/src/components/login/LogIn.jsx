@@ -19,8 +19,8 @@ const LogIn = () => {
     } else {
       setEmailError("");
     }
-    if (!password) {
-      setPasswordError("Podaj hasło");
+    if (!password || password.length < 6) {
+      setPasswordError("Hasło powinno mieć wiecej niż 6 znaków");
       isValid = false;
     } else {
       setPasswordError("");
@@ -38,7 +38,7 @@ try{
     password:password,
   });
   if (error){
-    console.error('Bład logowania:', error.message);
+    console.error('Bład logowania:', error);
   }else{
     console.log('Zalogowano pomyślnie', user);
   }
@@ -62,12 +62,12 @@ try{
         <form className="log-form">
           <div className="input-block">
             <label>Email</label>
-            <input type="text" value={email} onChange={(e)=> setEmail(e.target.value)}/>
+            <input className={emailError ? "error-input" : ""} type="text" value={email} onChange={(e)=> setEmail(e.target.value)}/>
             <span className="error-message">{emailError}</span>
             </div>
             <div className="input-block">
             <label htmlFor="password">Hasło</label>
-            <input type="password"  value={password} onChange={(e)=> setPassword(e.target.value)}/>
+            <input className={passwordError ? "error-input" : ""} type="password"  value={password} onChange={(e)=> setPassword(e.target.value)}/>
             <span className="error-message">{passwordError}</span>
             </div>
         </form>
