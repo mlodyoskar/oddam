@@ -1,5 +1,7 @@
 import React from "react";
 import Bear from "../../assets/Background-Form.jpg";
+import "../../scss/HomeLogedStyle/formFirstStep.scss";
+
 const FormFirstStep = () => {
   return (
     <>
@@ -12,32 +14,33 @@ const FormFirstStep = () => {
           </p>
         </div>
         <div className="firstStep_block">
+          <img className="bear-bg" src={Bear} alt="Bear" />
           <div className="firstStep-form">
             <p className="whichStep">Krok 1/4</p>
             <h1 className="firstStep-heading">Zaznacz co chcesz oddać:</h1>
-            <div>
-                <input type="checkbox" name="giveaway"/>
-                <label htmlFor="ubrania">ubrania, które nadają się do ponownego użycia</label>
+            <div className="checkbox-block">
+              <input className="checkbox" type="checkbox" name="giveaway" />
+              <label htmlFor="ubrania">
+                ubrania, które nadają się do ponownego użycia
+              </label>
             </div>
-            <div>
-                <input type="checkbox" name="giveaway"/>
-                <label htmlFor="ubrania">ubrania, do wyrzucenia</label>
+            <div className="checkbox-block">
+              <input type="checkbox" name="giveaway" />
+              <label htmlFor="ubrania">ubrania, do wyrzucenia</label>
             </div>
-            <div>
-                <input type="checkbox" name="giveaway"/>
-                <label htmlFor="ubrania">zabawki</label>
+            <div className="checkbox-block">
+              <input type="checkbox" name="giveaway" />
+              <label htmlFor="ubrania">zabawki</label>
             </div>
-            <div>
-                <input type="checkbox" name="giveaway"/>
-                <label htmlFor="ubrania">książki</label>
+            <div className="checkbox-block">
+              <input type="checkbox" name="giveaway" />
+              <label htmlFor="ubrania">książki</label>
             </div>
-            <div>
-                <input type="checkbox" name="giveaway"/>
-                <label htmlFor="ubrania">Inne</label>
+            <div className="checkbox-block">
+              <input type="checkbox" name="giveaway" />
+              <label htmlFor="ubrania">Inne</label>
             </div>
-          </div>
-          <div>
-            <img src={Bear} alt="Bear" />
+            <button className="form-btn">Dalej</button>
           </div>
         </div>
       </section>

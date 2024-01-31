@@ -63,7 +63,7 @@ const Registration = () => {
       console.log("bład walidacji");
     }
   };
-
+//clsx, classNames
   return (
     <>
      {redirect && <Navigate to="/logowanie" />}

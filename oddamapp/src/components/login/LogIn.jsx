@@ -35,7 +35,7 @@ const LogIn = () => {
     if(validateForm()){
 try{
   const {user, error} = await supabase.auth.signInWithPassword({
-    email:email,
+    email,
     password:password,
   });
   if (error){

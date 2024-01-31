@@ -15,7 +15,10 @@ const WhoWeHelp = () => {
 
   async function getProducts() {
     try {
-      let { data, error } = await supabase.from("fundacjom").select("*").eq('type', selectedCategory);
+      let { data, error } = await supabase
+        .from("fundacjom")
+        .select("*")
+        .eq("type", selectedCategory);
       if (error) throw error;
       if (data != null) {
         setFetchData(data);
@@ -35,7 +38,10 @@ const WhoWeHelp = () => {
   const currentItems = fetchData.slice(indexOfFirstItem, indexOfLastItem);
 
   const totalPages = Math.ceil(fetchData.length / itemsPerPage);
-  const pageNumbers = Array.from({ length: totalPages }, (_, index) => index + 1);
+  const pageNumbers = Array.from(
+    { length: totalPages },
+    (_, index) => index + 1
+  );
 
   return (
     <>
@@ -44,26 +50,38 @@ const WhoWeHelp = () => {
           <h1 className="whoWeHelp-heading">Komu pomagamy?</h1>
           <img src={Decoration} alt="decoration" />
           <div className="three-btns">
-            <button className="whoWeHelp-btn" onClick={() => setSelectedCategory("fundacje")}>
+            <button
+              className="whoWeHelp-btn"
+              onClick={() => setSelectedCategory("fundacje")}
+            >
               Fundacjom
             </button>
-            <button className="whoWeHelp-btn" onClick={() => setSelectedCategory("organizacjom")}>
+            <button
+              className="whoWeHelp-btn"
+              onClick={() => setSelectedCategory("organizacjom")}
+            >
               Organizacjom pozarządowym
             </button>
-            <button className="whoWeHelp-btn" onClick={() => setSelectedCategory("zbiorkom")}>
+            <button
+              className="whoWeHelp-btn"
+              onClick={() => setSelectedCategory("zbiorkom")}
+            >
               Lokalnym zbiórkom
             </button>
           </div>
           <p className="whoWeHelp-description">
-            W naszej bazie znajdziesz listę zweryfikowanych Fundacji, z którymi współpracujemy. Możesz sprawdzić czym się
-            zajmują, komu pomagają i czego potrzebują.
+            W naszej bazie znajdziesz listę zweryfikowanych Fundacji, z którymi
+            współpracujemy. Możesz sprawdzić czym się zajmują, komu pomagają i
+            czego potrzebują.
           </p>
           {currentItems.map((item) => (
             <div className="collection-containers" key={item.id}>
               <div className="collection-container">
                 <h1 className="collection-container-heading">{item.title}</h1>
                 <div className="collection-block">
-                  <p className="collection-block_description">{item.description}</p>
+                  <p className="collection-block_description">
+                    {item.description}
+                  </p>
                   <p className="collection-block-description2">{item.things}</p>
                 </div>
               </div>
@@ -73,7 +91,7 @@ const WhoWeHelp = () => {
             <div className="page-numbers">
               {pageNumbers.map((number) => (
                 <div
-                  className={`number ${number === currentPage ? 'active' : ''}`}
+                  className={`number ${number === currentPage ? "active" : ""}`}
                   key={number}
                   onClick={() => setCurrentPage(number)}
                 >
@@ -89,3 +107,20 @@ const WhoWeHelp = () => {
 };
 
 export default WhoWeHelp;
+
+// function Parent() {
+//   const [page, setPage] = useState();
+//   const [formData, setFormData] = useState({});
+
+//   const renderForm = () => {
+//     switch (page) {
+//       case 1:
+//         return <Form1 />;
+
+//       default:
+//         break;
+//     }
+//   };
+
+//   return renderForm();
+// }
