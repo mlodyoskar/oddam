@@ -1,14 +1,14 @@
 import React from "react";
 import Navigation from "./Home/Navigation";
 import Start from "./LogedHome/Start";
-import FormFirstStep from "./LogedHome/FormFirstStep";
+import FormSecondStep from "./LogedHome/FormSecondStep";
 
 const LogedHome = () => {
   return (
     <>
       <Navigation />
       <Start />
-      <FormFirstStep />
+      <FormSecondStep />
     </>
   );
 };

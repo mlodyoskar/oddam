@@ -82,3 +82,40 @@ input[type="checkbox"]:checked {
 input[type="checkbox"]:hover {
   background-color: #fad648;
 }
+
+//krok 2
+
+.select-block {
+  position: relative;
+  display: inline-block;
+}
+
+.select-label {
+  font-size: 20px;
+  margin-right: 30px;
+}
+
+.select {
+  width: 180px;
+  height: 30px;
+  border: 1px solid $primary;
+  padding-left: 15px;
+  font-size: 17px;
+  appearance: none;
+}
+
+.select:focus {
+  outline: none;
+}
+
+.select-Arrow {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  width: 45px;
+  height: 45px;
+  cursor: pointer;
+}
+.select-Arrow:checked {
+  rotate: 35deg;
+}

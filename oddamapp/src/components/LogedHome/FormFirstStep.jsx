@@ -1,6 +1,6 @@
 import React from "react";
 import Bear from "../../assets/Background-Form.jpg";
-import "../../scss/HomeLogedStyle/formFirstStep.scss";
+import "../../scss/HomeLogedStyle/formSteps.scss";
 
 const FormFirstStep = () => {
   return (

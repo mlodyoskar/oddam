@@ -1,14 +1,16 @@
 import React from "react";
 import FormImg from "../../assets/Form-Hero-Image.jpg";
 import Decoration from "../../assets/Decoration.svg";
-import '../../scss/HomeLogedStyle/Start.scss'
+import "../../scss/HomeLogedStyle/Start.scss";
 const Start = () => {
   return (
     <>
       <section className="start-section">
-        <img className='start-img' src={FormImg} alt="clouth" />
+        <img className="start-img" src={FormImg} alt="clouth" />
         <div className="stepsContainer">
-          <h1 className="start-heading">Oddaj rzeczy, których już nie chcesz POTRZEBUJĄCYM</h1>
+          <h1 className="start-heading">
+            Oddaj rzeczy, których już nie chcesz POTRZEBUJĄCYM
+          </h1>
           <img src={Decoration} alt="decoration" />
           <p className="start-text">Wystarczą 4 proste kroki:</p>
           <div className="fourSteps">
