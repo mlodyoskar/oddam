@@ -133,3 +133,54 @@ input[type="checkbox"]:hover {
   appearance: none;
   background-color: #eeedeb;
 }
+
+// Third step
+
+.thirdStepForm {
+  margin-top: 30px;
+
+  &_options {
+    display: flex;
+    width: 570px;
+    height: 100px;
+    flex-wrap: wrap;
+    margin-bottom: 60px;
+    .thirdStepForm_choose-option {
+      width: auto;
+      height: 20px;
+      border: 1px solid $primary;
+      padding: 8px;
+      margin-right: 15px;
+      margin-bottom: 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+    }
+    .thirdStepForm_choose-option:hover {
+      background-color: #fad648;
+    }
+    .thirdStepForm_choose-option.active {
+      background-color: #fad648;
+    }
+  }
+}
+
+.thirdStep-heading {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+.thirdStepForm-inputBlock {
+  position: relative;
+  bottom: 50px;
+}
+.thirds {
+  margin: -40px 0 0 0;
+}
+.ThirdStep-Input {
+  width: 400px;
+  height: 20px;
+  background: none;
+  border: 1px solid $primary;
+}

@@ -6,9 +6,6 @@ import ArrowDown from "../../assets/Icon-Arrow-Down.svg";
 const FormSecondStep = () => {
   const [arrowDown, setArrowDown] = useState(false);
 
-  const handleArrowClick = () => {
-    setArrowDown(!arrowDown);
-  };
   return (
     <>
       <section className="firstStep">
