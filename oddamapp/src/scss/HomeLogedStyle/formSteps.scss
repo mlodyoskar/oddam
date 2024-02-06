@@ -102,6 +102,8 @@ input[type="checkbox"]:hover {
   padding-left: 15px;
   font-size: 17px;
   appearance: none;
+  cursor: pointer;
+  background: none;
 }
 
 .select:focus {
@@ -115,7 +117,19 @@ input[type="checkbox"]:hover {
   width: 45px;
   height: 45px;
   cursor: pointer;
+  transition: transform 0.4s ease;
 }
-.select-Arrow:checked {
-  rotate: 35deg;
+.select-Arrow.upside-down {
+  transform: rotate(180deg);
+  transition: 0.4s ease;
+}
+
+.form-btns {
+  display: flex;
+  gap: 30px;
+  margin: 120px 0 0 50px;
+}
+.option {
+  appearance: none;
+  background-color: #eeedeb;
 }

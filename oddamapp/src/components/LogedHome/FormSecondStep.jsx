@@ -1,10 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import Bear from "../../assets/Background-Form.jpg";
 import "../../scss/HomeLogedStyle/formSteps.scss";
 import ArrowDown from "../../assets/Icon-Arrow-Down.svg";
-import ArrowUp from "../../assets/Icon-Arrow-Up.svg";
 
 const FormSecondStep = () => {
+  const [arrowDown, setArrowDown] = useState(false);
+
+  const handleArrowClick = () => {
+    setArrowDown(!arrowDown);
+  };
   return (
     <>
       <section className="firstStep">
@@ -24,18 +28,37 @@ const FormSecondStep = () => {
             </h1>
             <div className="select-block">
               <label className="select-label">Liczba 60l worków:</label>
-              <select className="select" for="choose">
-                <option value="">— wybierz —</option>
-                <option value="first">1</option>
-                <option value="second">2</option>
-                <option value="third">3</option>
-                <option value="fourth">4</option>
-                <option value="fifth">5</option>
+              <select
+                className="select"
+                for="choose"
+                onClick={() => setArrowDown(!arrowDown)}
+              >
+                <option className="option" value="">
+                  — wybierz —
+                </option>
+                <option className="option" value="first">
+                  1
+                </option>
+                <option className="option" value="second">
+                  2
+                </option>
+                <option className="option" value="third">
+                  3
+                </option>
+                <option className="option" value="fourth">
+                  4
+                </option>
+                <option className="option" value="fifth">
+                  5
+                </option>
               </select>
-              <img className="select-Arrow" src={ArrowDown} alt="arrow down" />
-              {/* <img className="select-ArrowUp" src={ArrowUp} alt="arrow up" /> */}
+              <img
+                className={`select-Arrow ${arrowDown ? "upside-down" : ""}`}
+                src={ArrowDown}
+                alt="arrow down"
+              />
             </div>
-            <div>
+            <div className="form-btns">
               <button className="form-btn">Wstecz</button>
               <button className="form-btn">Dalej</button>
             </div>
