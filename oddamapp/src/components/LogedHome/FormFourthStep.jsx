@@ -1,76 +1,66 @@
-import React, { useState } from "react";
+import React from "react";
 import Bear from "../../assets/Background-Form.jpg";
 import "../../scss/HomeLogedStyle/formSteps.scss";
-import ArrowDown from "../../assets/Icon-Arrow-Down.svg";
 
 const FormFourthStep = () => {
-  const [activeOption, setActiveOption] = useState(null);
-  const [arrowDown, setArrowDown] = useState(false);
-
-  const handleOptionClick = (option) => {
-    setActiveOption(option === activeOption ? null : option);
-  };
-
   return (
     <>
       <section className="firstStep">
         <div className="firstStep_info">
           <h1 className="firstStep_info_heading">Ważne!</h1>
           <p className="firstStep_info_text">
-            Jeśli wiesz komu chcesz pomóc, możesz wpisać nazwę tej organizacji w
-            wyszukiwarce. Możesz też filtrować organizacje po ich lokalizacji
-            bądź celu ich pomocy.
+            Podaj adres oraz termin odbioru rzeczy.
           </p>
         </div>
         <div className="firstStep_block">
           <img className="bear-bg" src={Bear} alt="Bear" />
           <div className="firstStep-form">
-            <p className="whichStep">Krok 3/4</p>
+            <p className="whichStep">Krok 4/4</p>
             <h1 className="firstStep-heading">
               Podaj adres oraz termin odbioru rzecz przez kuriera
             </h1>
             <div className="inputs-containers">
-              <div>
-                <h1>Adres odbioru:</h1>
-                <div>
+              <div className="input-first-container">
+                <h1 className="input-heading">Adres odbioru:</h1>
+                <div className="input-container">
                   <label>Ulica</label>
                   <input></input>
                 </div>
-                <div>
+                <div className="input-container">
                   <label>Miasto</label>
                   <input></input>
                 </div>
-                <div>
+                <div className="input-container">
                   <label>Ulica:</label>
                   <input></input>
                 </div>
-                <div>
+                <div className="input-container">
                   <label>Kod pocztowy</label>
                   <input></input>
                 </div>
-                <div>
+                <div className="input-container">
                   <label>Numer telefonu</label>
                   <input></input>
                 </div>
               </div>
-              <div>
-                <h1>Adres odbioru:</h1>
-                <div>
+              <div className="input-second-container">
+                <h1 className="input-heading">Adres odbioru:</h1>
+                <div className="input-container">
                   <label>Data</label>
                   <input></input>
                 </div>
-                <div>
+                <div className="input-container">
                   <label>Godzina</label>
                   <input></input>
                 </div>
-                <div>
+                <div className="input-container">
                   <label>Uwagi dla kuriera</label>
-                  <textarea></textarea>
+                  <textarea className="textarea-input"></textarea>
                 </div>
               </div>
             </div>
 
-            <div className="form-btns thirds">
+            <div className="form-btns fourth">
               <button className="form-btn">Wstecz</button>
               <button className="form-btn">Dalej</button>
             </div>
