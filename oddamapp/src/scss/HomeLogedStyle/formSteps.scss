@@ -250,11 +250,34 @@ input[type="checkbox"]:hover {
   width: 45px;
   height: 45px;
   margin-right: 30px;
-  margin-top: 15px;
 }
 
 .donate-block {
   display: flex;
   justify-content: flex-start;
   align-items: center;
+  margin-right: 30px;
+  margin-top: 15px;
+}
+
+.summary-form-containers {
+  display: flex;
+  gap: 40px;
+}
+
+.table-block {
+  tbody {
+    tr {
+      height: 30px;
+      width: 100px;
+      td {
+        width: 75px;
+        padding: 5px 50px 5px 0;
+      }
+    }
+  }
+}
+.donate-heading-form {
+  margin: 15px 0 30px 0;
+  @extend .donate-heading;
 }

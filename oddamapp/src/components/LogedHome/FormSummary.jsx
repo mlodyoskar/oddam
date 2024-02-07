@@ -25,6 +25,50 @@ const FormSummary = () => {
                   <p className="donate-paragraph">dla lokalizacji: Warszawa</p>
                 </div>
               </div>
+              <div className="summary-form-containers">
+                <div className="summary-block">
+                  <h1 className="donate-heading-form">Adres odbioru:</h1>
+                  <table className="table-block">
+                    <tbody>
+                      <tr>
+                        <td>Ulica</td>
+                        <td>Prosta 51</td>
+                      </tr>
+                      <tr>
+                        <td>Miasto</td>
+                        <td>Warszawa</td>
+                      </tr>
+                      <tr>
+                        <td>Kod pocztowy</td>
+                        <td>90-209</td>
+                      </tr>
+                      <tr>
+                        <td>Numer telefonu</td>
+                        <td>473 839 483</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div className="summary-block">
+                  <h1 className="donate-heading-form">Termin odbioru:</h1>
+                  <table className="table-block">
+                    <tbody>
+                      <tr>
+                        <td>Data</td>
+                        <td>17.10.2019</td>
+                      </tr>
+                      <tr>
+                        <td>Godzina</td>
+                        <td>17:30</td>
+                      </tr>
+                      <tr>
+                        <td>Uwagi dla kuriera</td>
+                        <td></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
             </div>
 
             <div className="form-btns fourth">
