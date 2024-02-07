@@ -234,3 +234,27 @@ input[type="checkbox"]:hover {
 .fourth {
   margin: 0;
 }
+
+//summary
+
+.summary-containers {
+  display: flex;
+  flex-direction: column;
+  .donate-heading {
+    font-size: 20px;
+    font-weight: 600;
+  }
+}
+
+.donate-img {
+  width: 45px;
+  height: 45px;
+  margin-right: 30px;
+  margin-top: 15px;
+}
+
+.donate-block {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
