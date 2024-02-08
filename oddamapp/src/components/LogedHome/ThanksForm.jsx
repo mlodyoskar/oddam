@@ -8,12 +8,6 @@ const ThanksForm = () => {
     <>
       {" "}
       <section className="firstStep">
-        <div className="firstStep_info">
-          <h1 className="firstStep_info_heading">Ważne!</h1>
-          <p className="firstStep_info_text">
-            Podaj adres oraz termin odbioru rzeczy.
-          </p>
-        </div>
         <div className="firstStep_block">
           <img className="bear-bg" src={Bear} alt="Bear" />
           <div className="thanks-block">

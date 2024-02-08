@@ -2,7 +2,11 @@ import React from "react";
 import Bear from "../../assets/Background-Form.jpg";
 import "../../scss/HomeLogedStyle/formSteps.scss";
 
-const FormFirstStep = () => {
+const FormFirstStep = ({ onNext }) => {
+  const handleNext = () => {
+    onNext();
+  };
+
   return (
     <>
       <section className="firstStep">
@@ -40,7 +44,9 @@ const FormFirstStep = () => {
               <input type="checkbox" name="giveaway" />
               <label htmlFor="ubrania">Inne</label>
             </div>
-            <button className="form-btn">Dalej</button>
+            <button className="form-btn" onClick={handleNext}>
+              Dalej
+            </button>
           </div>
         </div>
       </section>

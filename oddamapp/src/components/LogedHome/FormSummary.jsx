@@ -3,7 +3,13 @@ import Bear from "../../assets/Background-Form.jpg";
 import "../../scss/HomeLogedStyle/formSteps.scss";
 import Shirt from "../../assets/Icon-1.svg";
 import Circle from "../../assets/Icon-4.svg";
-const FormSummary = () => {
+const FormSummary = ({ onNext, onPrev }) => {
+  const handleNext = () => {
+    onNext();
+  };
+  const handlePrev = () => {
+    onPrev();
+  };
   return (
     <>
       <section className="firstStep">
@@ -72,8 +78,12 @@ const FormSummary = () => {
             </div>
 
             <div className="form-btns fourth">
-              <button className="form-btn">Wstecz</button>
-              <button className="form-btn">Potwierdzam</button>
+              <button className="form-btn" onClick={handlePrev}>
+                Wstecz
+              </button>
+              <button className="form-btn" onClick={handleNext}>
+                Potwierdzam
+              </button>
             </div>
           </div>
         </div>

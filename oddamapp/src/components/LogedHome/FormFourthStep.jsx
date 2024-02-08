@@ -2,7 +2,13 @@ import React from "react";
 import Bear from "../../assets/Background-Form.jpg";
 import "../../scss/HomeLogedStyle/formSteps.scss";
 
-const FormFourthStep = () => {
+const FormFourthStep = ({ onNext, onPrev }) => {
+  const handleNext = () => {
+    onNext();
+  };
+  const handlePrev = () => {
+    onPrev();
+  };
   return (
     <>
       <section className="firstStep">
@@ -61,8 +67,12 @@ const FormFourthStep = () => {
             </div>
 
             <div className="form-btns fourth">
-              <button className="form-btn">Wstecz</button>
-              <button className="form-btn">Dalej</button>
+              <button className="form-btn" onClick={handlePrev}>
+                Wstecz
+              </button>
+              <button className="form-btn " onClick={handleNext}>
+                Dalej
+              </button>
             </div>
           </div>
         </div>

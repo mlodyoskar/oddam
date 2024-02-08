@@ -3,10 +3,16 @@ import Bear from "../../assets/Background-Form.jpg";
 import "../../scss/HomeLogedStyle/formSteps.scss";
 import ArrowDown from "../../assets/Icon-Arrow-Down.svg";
 
-const FormThirdStep = () => {
+const FormThirdStep = ({ onNext, onPrev }) => {
   const [activeOption, setActiveOption] = useState(null);
   const [arrowDown, setArrowDown] = useState(false);
+  const handleNext = () => {
+    onNext();
+  };
 
+  const handlePrev = () => {
+    onPrev();
+  };
   const handleOptionClick = (option) => {
     setActiveOption(option === activeOption ? null : option);
   };
@@ -115,8 +121,12 @@ const FormThirdStep = () => {
             </div>
 
             <div className="form-btns thirds">
-              <button className="form-btn">Wstecz</button>
-              <button className="form-btn">Dalej</button>
+              <button className="form-btn" onClick={handlePrev}>
+                Wstecz
+              </button>
+              <button className="form-btn" onClick={handleNext}>
+                Dalej
+              </button>
             </div>
           </div>
         </div>
