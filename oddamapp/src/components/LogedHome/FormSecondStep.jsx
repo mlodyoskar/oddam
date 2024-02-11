@@ -5,8 +5,11 @@ import ArrowDown from "../../assets/Icon-Arrow-Down.svg";
 
 const FormSecondStep = ({ onNext, onPrev }) => {
   const [arrowDown, setArrowDown] = useState(false);
+  const [formData, setFormData] = useState({
+    bagsCount: "",
+  });
   const handleNext = () => {
-    onNext();
+    onNext(formData);
   };
 
   const handlePrev = () => {
@@ -33,7 +36,10 @@ const FormSecondStep = ({ onNext, onPrev }) => {
               <label className="select-label">Liczba 60l worków:</label>
               <select
                 className="select"
-                for="choose"
+                value={formData.bagsCount}
+                onChange={(e) =>
+                  setFormData({ ...formData, bagsCount: e.target.value })
+                }
                 onClick={() => setArrowDown(!arrowDown)}
               >
                 <option className="option" value="">
