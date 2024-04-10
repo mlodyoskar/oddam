@@ -107,20 +107,3 @@ const WhoWeHelp = () => {
 };
 
 export default WhoWeHelp;
-
-// function Parent() {
-//   const [page, setPage] = useState();
-//   const [formData, setFormData] = useState({});
-
-//   const renderForm = () => {
-//     switch (page) {
-//       case 1:
-//         return <Form1 />;
-
-//       default:
-//         break;
-//     }
-//   };
-
-//   return renderForm();
-// }
