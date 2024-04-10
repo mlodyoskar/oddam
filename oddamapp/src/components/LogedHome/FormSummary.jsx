@@ -3,7 +3,7 @@ import Bear from "../../assets/Background-Form.jpg";
 import "../../scss/HomeLogedStyle/formSteps.scss";
 import Shirt from "../../assets/Icon-1.svg";
 import Circle from "../../assets/Icon-4.svg";
-const FormSummary = ({ onNext, onPrev }) => {
+const FormSummary = ({ selectedGiveaway, onNext, onPrev }) => {
   const handleNext = () => {
     onNext();
   };

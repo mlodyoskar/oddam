@@ -6,17 +6,17 @@ import AboutUs from "./Home/AboutUs";
 import WhoWeHelp from "./Home/WhoWeHelp";
 import Contact from "./Home/Contact";
 
-const Home=()=>{
-return(
+const Home = () => {
+  return (
     <>
-    <MainSection/>
-    <ThreeColumns/>
-    <Steps/>
-    <AboutUs/>
-    <WhoWeHelp/>
-    <Contact/>
+      <MainSection />
+      <ThreeColumns />
+      <Steps />
+      <AboutUs />
+      <WhoWeHelp />
+      <Contact />
     </>
-);
-}
+  );
+};
 
 export default Home;

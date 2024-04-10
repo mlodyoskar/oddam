@@ -1,26 +1,15 @@
-import React, { useState } from "react";
+import React from "react";
 import Bear from "../../assets/Background-Form.jpg";
 import "../../scss/HomeLogedStyle/formSteps.scss";
 
-const FormFirstStep = ({ onNext }) => {
-  const [formData, setFormData] = useState({
-    giveaway: {
-      reusableClothes: false,
-      clothesToDiscard: false,
-      toys: false,
-      books: false,
-      others: false,
-    },
-  });
-
+const FormFirstStep = ({ selectedGiveaway, onCheckboxChange, onNext }) => {
+  const reusableClothesChecked = selectedGiveaway?.reusableClothes || false;
+  const clothesToDiscardChecked = selectedGiveaway?.clothesToDiscard || false;
+  const toysChecked = selectedGiveaway?.toys || false;
+  const booksChecked = selectedGiveaway?.books || false;
+  const othersChecked = selectedGiveaway?.others || false;
   const handleCheckboxChange = (category) => {
-    setFormData((prevData) => ({
-      ...prevData,
-      giveaway: {
-        ...prevData.giveaway,
-        [category]: !prevData.giveaway[category],
-      },
-    }));
+    onCheckboxChange(category);
   };
   const handleNext = () => {
     onNext();
@@ -46,7 +35,7 @@ const FormFirstStep = ({ onNext }) => {
                 className="checkbox"
                 type="checkbox"
                 name="reusableClothes"
-                checked={formData.giveaway.reusableClothes}
+                checked={reusableClothesChecked}
                 onChange={() => handleCheckboxChange("reusableClothes")}
               />
               <label htmlFor="ubrania">
@@ -57,7 +46,7 @@ const FormFirstStep = ({ onNext }) => {
               <input
                 type="checkbox"
                 name="clothesToDiscard"
-                checked={formData.giveaway.clothesToDiscard}
+                checked={clothesToDiscardChecked}
                 onChange={() => handleCheckboxChange("clothesToDiscard")}
               />
               <label htmlFor="ubrania">ubrania, do wyrzucenia</label>
@@ -65,8 +54,8 @@ const FormFirstStep = ({ onNext }) => {
             <div className="checkbox-block">
               <input
                 type="checkbox"
-                name="books"
-                checked={formData.giveaway.toys}
+                name="toys"
+                checked={toysChecked}
                 onChange={() => handleCheckboxChange("toys")}
               />
               <label htmlFor="ubrania">zabawki</label>
@@ -74,8 +63,8 @@ const FormFirstStep = ({ onNext }) => {
             <div className="checkbox-block">
               <input
                 type="checkbox"
-                name=""
-                checked={formData.giveaway.books}
+                name="books"
+                checked={booksChecked}
                 onChange={() => handleCheckboxChange("books")}
               />
               <label htmlFor="ubrania">książki</label>
@@ -84,7 +73,7 @@ const FormFirstStep = ({ onNext }) => {
               <input
                 type="checkbox"
                 name="others"
-                checked={formData.giveaway.others}
+                checked={othersChecked}
                 onChange={() => handleCheckboxChange("others")}
               />
               <label htmlFor="ubrania">Inne</label>
