@@ -12,7 +12,7 @@ const MainSection = () => {
           <img src={HeroImage} alt="losowe rzeczy" />
         </div>
         <div>
-          <Navigation/>
+          <Navigation />
           <div className="firstSection-heading-container">
             <h1 className="firstSection-heading">
               Zacznij pomagać <br /> Oddaj niechciane rzeczy w zaufane ręce
